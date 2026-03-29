@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download Options</title>
+    <style>
+        .download-options {
+            display: none;
+            margin-top: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .download-options button {
+            margin-top: 10px;
+            background-color: #008CBA;
+        }
+    </style>
+</head>
+<body>
+
+    <button id="open-pdf-btn">Download Here</button>
+
+    <div id="download-options" class="download-options">
+        <h3>Select file type to download:</h3>
+        <button onclick="downloadFile('pdf')">PDF</button>
+        <button onclick="downloadFile('zip')">ZIP</button>
+        <button onclick="downloadFile('doc')">Document</button>
+    </div>
+
+    <script>
+        
+        document.getElementById('open-pdf-btn').onclick = function() {
+            window.open('C:\Users\annar\Downloads\ABHIRESUME.pdf', '_blank');  
+            document.getElementById('download-options').style.display = 'block';
+        };
+
+        function downloadFile(fileType) {
+            let fileUrl = '';
+            
+            if (fileType === 'pdf') {
+                fileUrl = 'C:\Users\annar\Downloads\ABHIRESUME.pdf';  
+            } else if (fileType === 'zip') {
+                fileUrl = 'your-file.zip';  
+            } else if (fileType === 'doc') {
+                fileUrl = 'your-document-file.docx';  
+            }
+
+            const link = document.createElement('a');
+            link.href = fileUrl;
+            link.download = fileUrl.split('/').pop();  
+            link.click();
+        }
+    </script>
+
+</body>
+</html>

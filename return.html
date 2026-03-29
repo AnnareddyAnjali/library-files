@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Return Book</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #08a01a;
+        }
+        .container {
+            background-color: #096204;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            max-width: 400px;
+            width: 100%;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        input[type="text"],
+        input[type="number"],
+        input[type="submit"] {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #0a6403;
+            border-radius: 4px;
+        }
+        input[type="submit"] {
+            background-color: #b60c28;
+            color: #055618;
+            border: none;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #97af1c;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Return Book</h1>
+        <form action="/return-book" method="POST">
+            <label for="book-id">Book ID:</label>
+            <input type="number" id="book-id" name="book_id" required>
+
+            <label for="user-id">User ID:</label>
+            <input type="text" id="user-id" name="user_id" required>
+
+            <input type="submit" value="Return Book">
+        </form>
+		<a href="home.html" class="link">Go Back</a>
+    </div>
+</body>
+</html>
+
+
